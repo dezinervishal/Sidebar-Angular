@@ -1,0 +1,26 @@
+<header>
+    <nav>
+        <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+        <div class="headerRight">
+            <div class="headerMenu">
+                <a href="javascript:void(0)">Login</a> 
+                <a href="javascript:void(0)">Sign Up</a>   
+            </div>
+            <div class="userInfo">
+                <img src="https://image.flaticon.com/icons/svg/236/236832.svg" alt="">
+                <!-- <span>User</span> -->
+            </div>
+            <span class="hambergerIcon" (click)="toggleState()" [ngClass]="{ 'in': isIn }"></span>
+        </div>
+    </nav>
+    <aside [ngClass]="{ 'in': isIn }">
+        <ul>
+            <li><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Home</a></li>
+            <li><a href="javascript:void(0)">Home</a></li>
+        </ul>
+    </aside>
+</header>

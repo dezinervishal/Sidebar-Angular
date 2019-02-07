@@ -1,0 +1,120 @@
+header {
+    display: flex;
+    background: #000;
+    padding: 10px;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        .headerRight{
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            align-items: center;
+            .headerMenu{
+                a{
+                    margin: 0px 10px;
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+            .userInfo{
+                margin-right: 30px;
+                img{
+                    width: 50px;
+                    height: auto;
+                }
+                span{
+                    color: #fff;
+                }
+            }
+            .hambergerIcon {
+                height: 5px;
+                width: 50px;
+                position: relative;
+                border-radius: 50px;
+                background-color: #4A2545;
+                -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+                transition: all ease 0.5s;
+                margin-top: 10px;
+                z-index: 999;
+                cursor: pointer;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: inherit;
+                    border-radius: inherit;
+                    background-color: inherit;
+                    margin: auto;
+                    width: 50%;
+                    transition: all ease 0.5s;
+                }
+                &::before {
+                    top: -15px;
+                    left: 0;
+                    transform-origin: left;
+                }
+                &::after {
+                    bottom: -15px;
+                    right: 0;
+                    transform-origin: right;
+                }
+            }
+            .in {
+                transform: translate(-50%, -50%) rotate(135deg);
+                &::before {
+                    top: 0;
+                    transform: translateX(100%) rotate(-90deg);
+                }
+                &::after {
+                    bottom: 0;
+                    transform: translateX(-100%) rotate(-90deg);
+                }
+            }
+        }
+    }
+    aside {
+        position: fixed;
+        top: 60px;
+        height: 100%;
+        background: #000;
+        color: #fff;
+        width: 200px;
+        -webkit-animation: slide 0.5s backwards;
+        -webkit-animation-delay: 2s;
+        animation: slide 0.5s backwards;
+        animation-delay: 2s;
+        transition: 1s;
+        right: -200px;
+        transform: translateX(0px);
+        ul {
+            padding-left: 0px;
+            margin-top: 0px;
+            li {
+                list-style: none;
+                margin-bottom: 0px;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    display: block;
+                    padding: 10px;
+                    background: #000;
+                    &:hover {
+                        background: #d1d1d1;
+                    }
+                }
+            }
+        }
+        &.in {
+            transition: 1s;
+            -webkit-animation: slide 0.5s forwards;
+            -webkit-animation-delay: 2s;
+            animation: slide 0.5s forwards;
+            animation-delay: 2s;
+            transform: translateX(-200px);
+        }
+    }
+}
